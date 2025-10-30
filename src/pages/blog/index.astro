@@ -10,6 +10,9 @@ const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
+// All posts for simple infinite scroll layout
+const allPosts = posts;
+
 const hdImages = {
   portal1: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=95",
   portal2: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=2048&q=95",
@@ -77,7 +80,7 @@ const hdImages = {
 
 			.blog-header {
 				padding: 6rem 2rem;
-				text-align: center;
+				text-align: left;
 				position: relative;
 				background: rgba(26, 71, 42, 0.3);
 				backdrop-filter: blur(10px);
@@ -109,7 +112,7 @@ const hdImages = {
 			.blog-header p {
 				font-size: clamp(1.2rem, 2vw, 1.5rem);
 				max-width: 800px;
-				margin: 2rem auto 0;
+				margin: 2rem 0 0 0;
 				opacity: 0.9;
 			}
 
@@ -213,6 +216,59 @@ const hdImages = {
 				font-size: 1.2rem;
 			}
 
+			.featured-section {
+				padding: 4rem 2rem;
+				max-width: 2400px;
+				margin: 0 auto;
+			}
+
+			.featured-grid {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 2rem;
+			}
+
+			.regular-section {
+				padding: 0 2rem 4rem 2rem;
+				max-width: 2400px;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			.regular-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+
+			.load-more-btn {
+				background: var(--secondary);
+				color: var(--primary-dark);
+				border: none;
+				padding: 1rem 2rem;
+				border-radius: 50px;
+				font-size: 1rem;
+				font-weight: bold;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+
+			.load-more-btn:hover {
+				background: #a8e650;
+				transform: translateY(-2px);
+				box-shadow: 0 5px 15px rgba(151, 206, 76, 0.3);
+			}
+
+			.load-more-btn:disabled {
+				background: var(--primary-dark);
+				color: var(--text);
+				cursor: not-allowed;
+				opacity: 0.6;
+			}
+
 			@media (max-width: 1024px) {
 				.featured-post {
 					grid-template-columns: 1fr;
@@ -236,6 +292,15 @@ const hdImages = {
 				.featured-post .blog-title {
 					font-size: 2rem;
 				}
+
+				.featured-section,
+				.regular-section {
+					padding: 2rem 1rem;
+				}
+
+				.regular-grid {
+					grid-template-columns: 1fr;
+				}
 			}
 		</style>
 	</head>
@@ -244,12 +309,14 @@ const hdImages = {
 		<Header />
 		<main>
 			<div class="blog-header">
-				<h1>Interdimensional Blog</h1>
-				<p>Explore the mysteries and marvels of the Plumbus across infinite dimensions</p>
+				<h1>VCC Morse Radio Blog</h1>
+				<p>Vibe training Morse radio over mesh networks</p>
 			</div>
-			<div class="blog-grid">
-				{posts.map((post, index) => (
-					index === 0 ? (
+			
+			<!-- Featured Posts Section (Temporarily Hidden) -->
+			<!-- <div class="featured-section">
+				<div class="featured-grid">
+					{allFeaturedPosts.map((post) => (
 						<div class="featured-post">
 							<a href={`/blog/${post.id}/`} class="blog-link">
 								<article class="blog-card">
@@ -268,7 +335,14 @@ const hdImages = {
 								</article>
 							</a>
 						</div>
-					) : (
+					))}
+				</div>
+			</div> -->
+
+			<!-- All Posts with Infinite Scroll -->
+			<div class="regular-section">
+				<div id="posts-container" class="regular-grid">
+					{allPosts.slice(0, 6).map((post) => (
 						<a href={`/blog/${post.id}/`} class="blog-link">
 							<article class="blog-card">
 								<img 
@@ -285,10 +359,102 @@ const hdImages = {
 								</div>
 							</article>
 						</a>
-					)
-				))}
+					))}
+				</div>
+				
+				{allPosts.length > 6 && (
+					<button id="load-more" class="load-more-btn">
+						Load More Posts
+					</button>
+				)}
 			</div>
 		</main>
 		<Footer />
+		
+		<script>
+			// All posts data for infinite scroll
+			const allPosts = JSON.parse(decodeURIComponent("{encodeURIComponent(JSON.stringify(allPosts))}"));
+			let currentIndex = 6;
+			const postsPerLoad = 6;
+
+			const loadMoreBtn = document.getElementById('load-more');
+			const postsContainer = document.getElementById('posts-container');
+
+			function createPostCard(post) {
+				return `
+					<a href="/blog/${post.id}/" class="blog-link">
+						<article class="blog-card">
+							<img 
+								src="${post.data.heroImage}" 
+								alt="" 
+								class="blog-image"
+							/>
+							<div class="blog-content">
+								<h3 class="blog-title">${post.data.title}</h3>
+								<div class="blog-date">
+									${new Date(post.data.pubDate).toLocaleDateString('en-US', { 
+										year: 'numeric', 
+										month: 'short', 
+										day: 'numeric' 
+									})}
+								</div>
+								<p class="blog-description">${post.data.description}</p>
+							</div>
+						</article>
+					</a>
+				`;
+			}
+
+			function loadMorePosts() {
+				const nextPosts = allPosts.slice(currentIndex, currentIndex + postsPerLoad);
+				
+				nextPosts.forEach(post => {
+					const postHTML = createPostCard(post);
+					postsContainer.insertAdjacentHTML('beforeend', postHTML);
+				});
+
+				currentIndex += postsPerLoad;
+
+				// Disable button if all posts are loaded
+				if (currentIndex >= allPosts.length) {
+					loadMoreBtn.textContent = 'All Posts Loaded';
+					loadMoreBtn.disabled = true;
+				}
+
+				// Add fade-in animation to new posts
+				const newPosts = postsContainer.querySelectorAll('.blog-card:nth-last-child(-n+' + nextPosts.length + ')');
+				newPosts.forEach((post, index) => {
+					post.style.opacity = '0';
+					post.style.transform = 'translateY(20px)';
+					setTimeout(() => {
+						post.style.transition = 'all 0.5s ease';
+						post.style.opacity = '1';
+						post.style.transform = 'translateY(0)';
+					}, index * 100);
+				});
+			}
+
+			// Load more posts when button is clicked
+			if (loadMoreBtn) {
+				loadMoreBtn.addEventListener('click', loadMorePosts);
+			}
+
+			// Optional: Auto-load more posts when scrolling near bottom
+			let isLoading = false;
+			window.addEventListener('scroll', () => {
+				if (isLoading || !loadMoreBtn || loadMoreBtn.disabled) return;
+
+				const scrollPosition = window.innerHeight + window.scrollY;
+				const documentHeight = document.documentElement.scrollHeight;
+				
+				if (scrollPosition >= documentHeight - 1000) { // Load when 1000px from bottom
+					isLoading = true;
+					loadMorePosts();
+					setTimeout(() => {
+						isLoading = false;
+					}, 1000);
+				}
+			});
+		</script>
 	</body>
 </html>

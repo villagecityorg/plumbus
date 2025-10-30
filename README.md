@@ -1,4 +1,4 @@
-# 🌌 Plumbus Landing Page
+# 🌌 VCC Morse Radio Landing Site on Plumbus Theme
 
 ![](public/pic_prev_1.jpg)
 ![](public/pic_prev_2.jpg)

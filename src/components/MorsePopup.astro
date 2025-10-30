@@ -1,0 +1,76 @@
+---
+// Astro component for popup functionality
+---
+
+<button 
+  class="cta-button" 
+  onclick="window.open('/app', 'vcc-morse-popup', 'width=720,height=1280,resizable=yes,scrollbars=yes,status=yes,toolbar=no,menubar=no,location=no')"
+>
+  Start VCC Morse Radio!
+</button>
+
+<style>
+  .cta-button {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--primary-dark);
+    padding: 1.5rem 3rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 
+      0 0 10px var(--glow),
+      0 0 20px var(--glow);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    border: none;
+    z-index: 10;
+    pointer-events: auto;
+  }
+
+  .cta-button:hover {
+    transform: scale(1.05) translateY(-5px);
+    background: #a8e650;
+    box-shadow: 
+      0 0 20px var(--glow),
+      0 0 40px var(--glow);
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+  }
+
+  @keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+  }
+
+  @media (max-width: 768px) {
+    .cta-button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (min-width: 2000px) {
+    .cta-button {
+      font-size: 2rem;
+      padding: 2rem 4rem;
+    }
+  }
+</style>

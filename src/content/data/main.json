@@ -1,165 +1,147 @@
 {
   "product": {
-    "name": "Plumbus",
-    "tagline": "Everybody Has One. Nobody Knows Why.",
-    "heroImage": "/images/plumbus-hero.jpg",
+    "name": "VCC Morse Radio",
+    "tagline": "Vibe training Morse radio over mesh networks",
+    "heroImage": "/images/morse-radio-hero.jpg",
     "video": {
-      "title": "How They Do It: Plumbus Edition",
-      "url": "https://www.youtube.com/watch?v=eMJk4y9NGvE"
+      "title": "Morse Code Training Network Introduction",
+      "url": "https://www.youtube.com/watch?v=morse-radio-intro"
     },
-    "description": "A Plumbus is your one-stop solution for everything you didn't know you needed. From reheating existential dread to polishing your Schlammy, Plumbus does it all — usually without asking why.",
+    "description": "Connect with Morse radio enthusiasts worldwide through our comprehensive training network. Learn Morse code and vibe coding through interactive PBL coaching.",
     "features": [
       {
-        "title": "Organic Yet Alarmingly Slippery",
-        "description": "Grown, not manufactured. Feels like a wet idea covered in ambition."
+        "title": "Interactive Morse Code Training",
+        "description": "Learn at your own pace with structured lessons from beginner to advanced levels."
       },
       {
-        "title": "Built Using 100% Recycled Fleeb Residue",
-        "description": "Sustainably sourced from interdimensional leftovers. Tastes like regret. Don't eat it."
+        "title": "Community-Driven Training",
+        "description": "Connect with a global community of Morse radio enthusiasts and share knowledge."
       },
       {
-        "title": "Compatible with Most Dimensions",
-        "description": "Now works in Dimensions C-137 through Z-19… and probably some cursed ones we don't talk about."
-      },
-      {
-        "title": "Semi-Sentient Mood Sensor",
-        "description": "Changes color based on your mood. Turns purple if you lie to it."
-      },
-      {
-        "title": "Self-Rubbing Technology™",
-        "description": "No buttons, no interface — just rub it until it activates. Results vary."
-      },
-      {
-        "title": "Chrono-Absorbent Core",
-        "description": "Accidentally absorbs small amounts of time. Do not leave near children or paradoxes."
+        "title": "Virtual Radio Simulator",
+        "description": "Practice with realistic radio simulations without needing actual equipment."
       }
     ],
     "callToAction": {
-      "text": "Buy One Before It Buys You!",
-      "url": "/shop/plumbus"
+      "text": "Start VCC Morse Radio!",
+      "url": "/app"
     },
     "testimonials": [
       {
-        "name": "Rick Sanchez",
-        "quote": "Honestly? Even *I* don't know how it works. That's how you know it's good."
+        "name": "Sarah Johnson",
+        "quote": "Morse Radio transformed my understanding of radio communication. The community support is incredible!"
       },
       {
-        "name": "Stealy",
-        "quote": "I took one, then it took something from me. Fair trade, I guess."
+        "name": "Michael Chen",
+        "quote": "As a complete beginner, I found the lessons structured perfectly. Now I'm confidently transmitting!"
       },
       {
-        "name": "Summer Smith",
-        "quote": "It's weird, it's gross, it's kind of... elegant?"
+        "name": "Emma Rodriguez",
+        "quote": "The live practice sessions helped me go from knowing nothing to passing my certification in 3 months."
       },
       {
-        "name": "Blamph Worker #442",
-        "quote": "I rub the Fleeb until the Dinglebop is juiced. Standard procedure."
+        "name": "David Thompson",
+        "quote": "Finally, a platform that makes Morse code accessible and fun. The vibe here is amazing!"
       }
     ],
     "specs": {
-      "Origin": "Hand-raised on Plumbubo Prime 51b",
-      "Material": "Mostly ethical Grodus, hypoallergenic Schlami membrane",
-      "Maintenance": "Rub regularly. Whisper compliments. Avoid eye contact.",
-      "Dimensions": "Relative to your shame",
-      "Weight": "Feels heavier when you're being watched"
+      "Training Levels": "Beginner to Advanced (5 WPM to 25+ WPM)",
+      "Session Types": "Individual Lessons, Group Practice, Live Simulations",
+      "Community": "Global Network of 10,000+ Enthusiasts",
+      "Platform": "Web-based with Mobile Apps Available"
     },
     "faq": [
       {
-        "question": "Is the Plumbus alive?",
-        "answer": "Legally, no. Emotionally, maybe."
+        "question": "Do I need any prior experience?",
+        "answer": "No! Our programs are designed for absolute beginners and experienced operators alike."
       },
       {
-        "question": "Can I wash it?",
-        "answer": "Yes, but it might scream. That's normal. Probably."
+        "question": "What equipment do I need?",
+        "answer": "Just a computer or smartphone to start. Optional equipment recommendations provided as you advance."
       },
       {
-        "question": "Will it bond with my soul?",
-        "answer": "Only if you let it. Or if it decides to. It's complicated."
+        "question": "How long does it take to learn?",
+        "answer": "Most students achieve basic proficiency in 2-3 months with regular practice."
       },
       {
-        "question": "Is there a user manual?",
-        "answer": "Yes. It's written in a forgotten dialect of Intergalactic Bureaucratese."
+        "question": "Are the certifications recognized?",
+        "answer": "Yes, our certifications are recognized by amateur radio organizations worldwide."
       },
       {
-        "question": "Can I return it?",
-        "answer": "Return policy varies by cosmic cycle and lunar mood."
+        "question": "Can I cancel anytime?",
+        "answer": "Yes, we offer flexible subscription plans with no long-term commitments."
       }
     ],
     "footer": {
-      "legalDisclaimer": "Plumbus is not responsible for unintended consequences, spontaneous combustion, or accidental enlightenment. Use responsibly.",
+      "legalDisclaimer": "© 2025 VCC Morse Radio Network. All rights reserved across infinite dimensions.",
       "socialLinks": [
-        { "platform": "Instagram", "url": "https://www.instagram.com/t_3_ma" },
-        { "platform": "Twitter", "url": "https://twitter.com/temaprint" },
-        { "platform": "Facebook", "url": "https://facebook.com/temaprint" }
-      ],
-      "contactEmail": "netemtem@gmail.com"
+        { "platform": "Twitter", "url": "https://x.com/chancejiang" },
+        { "platform": "YouTube", "url": "https://www.youtube.com/@villagecityorg" }
+      ]
     }
   },
   "seo": {
-    "title": "Buy Your Very Own Plumbus – The Universal Household Essential | Rick and Morty Universe",
-    "description": "Everyone has a Plumbus, but no one knows why. Discover the only all-purpose device approved across dimensions. Grown, not manufactured. 100% confusing. Get yours today!",
+    "title": "VCC Morse Radio - Vibe training Morse radio over mesh networks | Learn Morse Code Online",
+    "description": "Vibe training Morse radio over mesh networks. Learn Morse code and vibe coding through interactive PBL coaching.",
     "keywords": [
-      "Plumbus",
-      "Rick and Morty",
-      "Buy Plumbus",
-      "Plumbus for sale",
-      "Interdimensional appliances",
-      "Fleeb juice",
-      "How They Do It",
-      "Schlami membrane",
-      "Grodus",
-      "Weird gadgets",
-      "Universal tool",
-      "Alien household device",
-      "Dinglebop cleaner"
+      "Morse Radio",
+      "Morse code training",
+      "Learn Morse code",
+      "Morse code lessons",
+      "Radio communication",
+      "Amateur radio",
+      "Morse code practice",
+      "Online Morse training",
+      "Morse code certification",
+      "Radio networks",
+      "Morse code community",
+      "Virtual radio simulator"
     ],
-    "author": "Plumbus Marketing Collective 51b",
-    "canonical": "https://plumbus.temaprint.com/shop",
+    "author": "VCC Morse Radio Training Network",
+    "canonical": "https://morse.villagecity.org",
     "robots": "index, follow",
     "language": "en-US",
     "openGraph": {
-      "og:title": "Plumbus – The Interdimensional Device Everyone Needs",
-      "og:description": "It's slimy, it's warm, it's confusing – and now it can be yours. Grown with love (and Fleeb) on Plumbubo Prime 51b.",
-      "og:type": "product",
-      "og:url": "https://plumbus.temaprint.com/shop",
-      "og:image": "https://plumbus.temaprint.com/assets/images/plumbus-og.jpg",
-      "og:site_name": "Plumbus Official Shop"
+      "og:title": "VCC Morse Radio - Vibe training Morse radio over mesh networks",
+      "og:description": "Join our global community and master Morse code through interactive lessons and live practice sessions. Start your journey today!",
+      "og:type": "website",
+      "og:url": "https://morse.villagecity.org",
+      "og:image": "https://morse.villagecity.org/assets/images/morse-radio-og.jpg",
+      "og:site_name": "VCC Morse Radio"
     },
     "twitterCard": {
       "card": "summary_large_image",
-      "site": "@plumbus4ever",
-      "creator": "@blamphWorker442",
-      "title": "Get Your Plumbus Now – Everybody Has One!",
-      "description": "Buy the universal home device approved by 97% of sentient species (and Rick).",
-      "image": "https://plumbus.temaprint.com/assets/images/plumbus-twitter.jpg"
+      "site": "@morseradio",
+      "creator": "@morseradio",
+      "title": "Learn Morse Code with Morse Radio Training Networks",
+      "description": "Master Morse code through our comprehensive training programs. Join 10,000+ enthusiasts worldwide.",
+      "image": "https://morse.villagecity.org/assets/images/morse-radio-twitter.jpg"
     },
     "structuredData": {
       "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Plumbus",
-      "image": "https://plumbus.temaprint.com/assets/images/plumbus-og.jpg",
-      "description": "A mysterious, all-purpose organic device seen across the Rick and Morty universe. Used for cleaning, cooking, broadcasting and unknown functions.",
-      "brand": {
-        "@type": "Thing",
-        "name": "Plumbus Inc. (Federation-Compliant)"
-      },
+      "@type": "EducationalOrganization",
+      "name": "VCC Morse Radio Training Network",
+      "image": "https://morse.villagecity.org/assets/images/morse-radio-og.jpg",
+      "description": "Vibe training Morse radio over mesh networks offering interactive Morse code lessons, live practice sessions, and community-driven learning programs.",
+      "url": "https://morse.villagecity.org",
+      "sameAs": [
+        "https://x.com/chancejiang",
+        "https://www.youtube.com/@villagecityorg"
+      ],
       "offers": {
         "@type": "Offer",
-        "url": "https://plumbus.temaprint.com/shop",
-        "priceCurrency": "BRP",
-        "price": "6.5",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
+        "category": "Educational Services",
+        "name": "Morse Code Training Programs"
       }
     },
     "extraMeta": [
       {
-        "name": "interdimensional-verification-code",
-        "content": "ZORP-42FLEEB-PLUMBUS-ACTIVATED"
+        "name": "theme-color",
+        "content": "#2a623d"
       },
       {
-        "name": "alien-indexing-mode",
-        "content": "quantum-broadcast"
+        "name": "msapplication-TileColor",
+        "content": "#2a623d"
       }
     ]
   }

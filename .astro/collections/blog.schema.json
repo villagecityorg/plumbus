@@ -45,6 +45,9 @@
         "heroImage": {
           "type": "string"
         },
+        "featured": {
+          "type": "boolean"
+        },
         "$schema": {
           "type": "string"
         }

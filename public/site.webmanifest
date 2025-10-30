@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "VCC Morse Radio - Vibe training Morse radio over mesh networks",
+  "short_name": "VCC Morse",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

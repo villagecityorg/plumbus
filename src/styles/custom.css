@@ -1,0 +1,67 @@
+/* Custom Styles for VCC Morse Radio Network */
+/* Overrides and additions to global.css */
+
+/* Font Variables for Consistency */
+:root {
+	--font-primary: 'Space Grotesk', sans-serif;
+	--font-mono: 'Space Mono', monospace;
+}
+
+/* Override default fonts with custom fonts */
+body {
+	font-family: var(--font-primary) !important;
+}
+
+code {
+	font-family: var(--font-mono) !important;
+}
+
+pre {
+	font-family: var(--font-mono) !important;
+}
+
+blockquote {
+	font-family: var(--font-mono) !important;
+}
+
+/* Ensure all text content is consistently white */
+h1, h2, h3, h4, h5, h6 {
+	color: white !important;
+}
+
+p, span, div, li, td, th, label, input, textarea, select {
+	color: white !important;
+}
+
+a {
+	color: #97ce4c !important; /* Keep links as secondary color for visibility */
+}
+
+/* Override any remaining text elements */
+body, main, article, section {
+	color: white !important;
+}
+
+/* Ensure blog post content text is white */
+.prose :global(h1),
+.prose :global(h2),
+.prose :global(h3),
+.prose :global(h4),
+.prose :global(h5),
+.prose :global(h6),
+.prose :global(p),
+.prose :global(li),
+.prose :global(span),
+.prose :global(div) {
+	color: white !important;
+}
+
+/* Keep secondary colored headings for emphasis but ensure they're visible */
+.title h1, .hero h1 {
+	color: #97ce4c !important;
+}
+
+/* Ensure CTA button has proper text contrast */
+.cta-button {
+	color: #1a472a !important; /* Use primary-dark for better contrast */
+}

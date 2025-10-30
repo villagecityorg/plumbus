@@ -1,5 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MorsePopup from '../components/MorsePopup.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import productData from '../content/data/main.json';
 import { getCollection } from 'astro:content';
@@ -17,7 +20,7 @@ const hdImages = {
   portal1: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=95",
   portal2: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=2048&q=95",
   texture: "https://images.unsplash.com/photo-1579546929662-711aa81148cf?w=2048&q=95",
-  product: "https://cs8.pikabu.ru/post_img/big/2016/04/27/6/1461748084167073788.jpg"
+  product: "/cover-morse-radio.jpg"
 };
 ---
 
@@ -42,7 +45,7 @@ const hdImages = {
 
 			body {
 				margin: 0;
-				font-family: 'Atkinson', sans-serif;
+				font-family: 'Space Grotesk', sans-serif;
 				background: var(--background);
 				color: var(--text);
 				overflow-x: hidden;
@@ -191,7 +194,7 @@ const hdImages = {
 			}
 
 			.hero h1 {
-				font-size: clamp(4rem, 10vw, 8rem);
+				font-size: clamp(2.025rem, 5.025vw, 3.975rem);
 				color: var(--secondary);
 				margin: 0;
 				text-shadow: 
@@ -209,7 +212,7 @@ const hdImages = {
 			}
 
 			.hero p {
-				font-size: clamp(1.5rem, 3vw, 2rem);
+				font-size: clamp(1.125rem, 2.25vw, 1.5rem);
 				margin: 2rem auto;
 				max-width: 800px;
 				line-height: 1.4;
@@ -235,6 +238,10 @@ const hdImages = {
 					0 0 10px var(--glow),
 					0 0 20px var(--glow);
 				backdrop-filter: blur(5px);
+				cursor: pointer;
+				border: none;
+				z-index: 10;
+				pointer-events: auto;
 			}
 
 			.cta-button:hover {
@@ -281,6 +288,9 @@ const hdImages = {
 					background: var(--textureBg) center/cover;
 					opacity: 0.05;
 					mix-blend-mode: overlay;
+				}
+				& h2 {
+					color: white;
 				}
 			}
 
@@ -357,6 +367,9 @@ const hdImages = {
 					background: 
 						radial-gradient(circle at 20% 30%, rgba(151, 206, 76, 0.1) 0%, transparent 70%),
 						radial-gradient(circle at 80% 70%, rgba(42, 98, 61, 0.1) 0%, transparent 70%);
+				}
+				& h2 {
+					color: white;
 				}
 			}
 
@@ -436,6 +449,9 @@ const hdImages = {
 					opacity: 0.05;
 					mix-blend-mode: overlay;
 				}
+				& h2 {
+					color: white;
+				}
 			}
 
 			.spec-item {
@@ -484,6 +500,16 @@ const hdImages = {
 					background: 
 						radial-gradient(circle at 20% 30%, rgba(151, 206, 76, 0.1) 0%, transparent 70%),
 						radial-gradient(circle at 80% 70%, rgba(42, 98, 61, 0.1) 0%, transparent 70%);
+				}
+				& h2 {
+					color: white;
+				}
+				& .section-subtitle {
+					color: var(--secondary);
+					font-size: 1.2rem;
+					margin-bottom: 3rem;
+					text-align: left;
+					text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 				}
 			}
 
@@ -553,49 +579,6 @@ const hdImages = {
 				height: 100%;
 			}
 
-			footer {
-				background: var(--background);
-				padding: 6rem 2rem;
-				text-align: center;
-				position: relative;
-			}
-
-			.social-links {
-				display: flex;
-				justify-content: center;
-				gap: 2rem;
-				margin: 2rem 0;
-				flex-wrap: wrap;
-			}
-
-			.social-links a {
-				color: var(--secondary);
-				text-decoration: none;
-				font-size: 1.2rem;
-				transition: all 0.3s ease;
-				padding: 0.5rem 1rem;
-				border: 1px solid rgba(151, 206, 76, 0.3);
-				border-radius: 5px;
-				backdrop-filter: blur(5px);
-			}
-
-			.social-links a:hover {
-				background: rgba(151, 206, 76, 0.1);
-				transform: translateY(-3px);
-			}
-
-			.disclaimer {
-				max-width: 1200px;
-				margin: 2rem auto;
-				font-size: 0.9rem;
-				opacity: 0.8;
-				line-height: 1.6;
-				padding: 2rem;
-				background: rgba(26, 71, 42, 0.3);
-				border-radius: 10px;
-				backdrop-filter: blur(5px);
-			}
-
 			@media (max-width: 1024px) {
 				.hero-content {
 					flex-direction: column-reverse;
@@ -623,11 +606,11 @@ const hdImages = {
 				}
 
 				.hero h1 {
-					font-size: 3rem;
+					font-size: 2.25rem;
 				}
 
 				.hero p {
-					font-size: 1.2rem;
+					font-size: 0.9rem;
 				}
 
 				.cta-button {
@@ -665,11 +648,11 @@ const hdImages = {
 				}
 
 				.hero h1 {
-					font-size: 10rem;
+					font-size: 7.5rem;
 				}
 
 				.hero p {
-					font-size: 2.5rem;
+					font-size: 1.875rem;
 					max-width: 1200px;
 				}
 
@@ -682,6 +665,7 @@ const hdImages = {
 	</head>
 	<body>
 		<div class="portal-bg"></div>
+		<Header />
 		<main>
 			<section class="hero">
 				<div class="hero-content">
@@ -689,19 +673,17 @@ const hdImages = {
 						<h1>{product.name}</h1>
 						<p class="tagline">{product.tagline}</p>
 						<p class="description">{product.description}</p>
-						<a href={product.callToAction.url} class="cta-button">
-							{product.callToAction.text}
-						</a>
+						<MorsePopup />
 					</div>
 					<div class="hero-image">
-						<img src={hdImages.product} alt="The Plumbus - Everyone's favorite interdimensional household device" />
+						<img src={hdImages.product} alt="Morse Radio Training Network - Learn Morse Code Online" />
 					</div>
 				</div>
 			</section>
 
 			<section class="features">
 				<div class="container">
-					<h2>Interdimensional Features</h2>
+					<h2>Training Features</h2>
 					<div class="features-grid">
 						{product.features.map((feature) => (
 							<div class="feature-card">
@@ -715,7 +697,7 @@ const hdImages = {
 
 			<section class="testimonials">
 				<div class="container">
-					<h2>Multiversal Reviews</h2>
+					<h2>Success Stories</h2>
 					<div class="testimonials-grid">
 						{product.testimonials.map((testimonial) => (
 							<div class="testimonial-card">
@@ -729,7 +711,7 @@ const hdImages = {
 
 			<section class="specs">
 				<div class="container">
-					<h2>Quantum Specifications</h2>
+					<h2>Training Paths</h2>
 					<div class="specs-grid">
 						{Object.entries(product.specs).map(([key, value]) => (
 							<div class="spec-item">
@@ -743,7 +725,8 @@ const hdImages = {
 
 			<section class="blog-section">
 				<div class="container">
-					<h2>Interdimensional Blog</h2>
+					<h2>VCC Morse Radio Blog</h2>
+					<p class="section-subtitle">Vibe training Morse radio over mesh networks</p>
 					<div class="blog-grid">
 						{posts.map((post) => (
 							<a href={`/blog/${post.id}/`} class="blog-link">
@@ -766,20 +749,7 @@ const hdImages = {
 					</div>
 				</div>
 			</section>
-
-			<footer>
-				<div class="container">
-					<div class="social-links">
-						{product.footer.socialLinks.map((link) => (
-							<a href={link.url} target="_blank" rel="noopener noreferrer">
-								{link.platform}
-							</a>
-						))}
-					</div>
-					<p class="disclaimer">{product.footer.legalDisclaimer}</p>
-					<p>Contact: <a href={`mailto:${product.footer.contactEmail}`}>{product.footer.contactEmail}</a></p>
-				</div>
-			</footer>
 		</main>
+		<Footer />
 	</body>
 </html>

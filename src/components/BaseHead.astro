@@ -1,7 +1,9 @@
 ---
-// Import the global.css file here so that it is included on
+// Import CSS files here so that they are included on
 // all pages through the use of the <BaseHead /> component.
+import '../styles/fonts.css';
 import '../styles/global.css';
+import '../styles/custom.css';
 import { SITE_TITLE } from '../consts';
 
 interface Props {
@@ -12,7 +14,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = '/cover-morse-radio.jpg' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -29,8 +31,9 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/space-grotesk-bold.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/space-mono-regular.woff2" as="font" type="font/woff2" crossorigin />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

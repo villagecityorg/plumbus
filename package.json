@@ -1,5 +1,5 @@
 {
-  "name": "@example/blog",
+  "name": "@vcc/morse-radio",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -13,6 +13,7 @@
     "@astrojs/mdx": "^4.0.8",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
-    "astro": "^5.2.5"
+    "astro": "^5.2.5",
+    "puppeteer": "^24.27.0"
   }
 }

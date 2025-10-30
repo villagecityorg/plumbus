@@ -1,7 +1,7 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import { SITE_TITLE } from '../../consts';
-import productData from '../../content/data/main.json';
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_TITLE } from '../consts';
+import productData from '../content/data/main.json';
 
 const { product } = productData;
 ---
@@ -34,6 +34,7 @@ const { product } = productData;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
+				overflow: hidden;
 			}
 
 			.container {
@@ -78,6 +79,33 @@ const { product } = productData;
 				border-radius: 10px;
 			}
 
+			.training-features-title {
+				color: var(--secondary);
+				font-weight: bold;
+				font-size: 1.1rem;
+				margin: 1.5rem 0 1rem 0;
+				text-shadow: 
+					0 0 10px var(--glow),
+					0 0 20px var(--glow),
+					0 0 30px var(--glow);
+				animation: pulse-glow 2s ease-in-out infinite alternate;
+			}
+
+			@keyframes pulse-glow {
+				0% {
+					text-shadow: 
+						0 0 10px var(--glow),
+						0 0 20px var(--glow),
+						0 0 30px var(--glow);
+				}
+				100% {
+					text-shadow: 
+						0 0 15px var(--secondary),
+						0 0 25px var(--secondary),
+						0 0 35px var(--secondary);
+				}
+			}
+
 			.welcome {
 				color: var(--secondary);
 				font-style: italic;
@@ -85,12 +113,33 @@ const { product } = productData;
 				margin-top: 2rem;
 			}
 
-			.back-link {
+			.close-button {
 				display: inline-block;
+				margin: 1rem 1rem 2rem 1rem;
+				padding: 1rem 2rem;
+				background: #ef4444;
+				color: white;
+				text-decoration: none;
+				border-radius: 50px;
+				font-weight: bold;
+				transition: all 0.3s ease;
+				border: none;
+				cursor: pointer;
+				font-size: 1rem;
+			}
+
+			.close-button:hover {
+				background: #dc2626;
+				transform: translateY(-3px);
+				box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+			}
+
+			.back-link {
+				display: none;
 				margin-top: 2rem;
 				padding: 1rem 2rem;
 				background: var(--secondary);
-				color: var(--primary-dark);
+				color: var(--background);
 				text-decoration: none;
 				border-radius: 50px;
 				font-weight: bold;
@@ -116,16 +165,18 @@ const { product } = productData;
 	</head>
 	<body>
 		<div class="container">
-			<h1>VCC Morse Radio Training Network</h1>
+			<h1>VCC Morse Radio App is Coming...</h1>
 			<div class="training-logo"></div>
 			<div class="message">
 				<p>📡 WELCOME ASPIRING OPERATORS 📡</p>
 				<p>
-					Join our comprehensive Morse radio training network and master the timeless skill of
-					Morse code communication. No special identification required - just your willingness
-					to learn and connect with operators worldwide.
+					Join our global Morse radio training network and master the timeless skill of
+					Morse code communication.
 				</p>
-				<p>
+				<p>No special identification required - just your willingness
+					to learn and connect with new operators worldwide.
+				</p>
+				<p class="training-features-title">
 					Our training program includes:
 				</p>
 				<ul style="text-align: left; list-style-position: inside;">
@@ -140,6 +191,7 @@ const { product } = productData;
 				* Join thousands of operators who have already discovered the joy and utility
 				of Morse code communication. Start your journey today!
 			</p>
+			<button onclick="window.close()" class="close-button">Close</button>
 			<a href="/" class="back-link">Return to Homepage</a>
 		</div>
 	</body>
