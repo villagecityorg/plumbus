@@ -455,7 +455,6 @@ const hdImages = {
 			}
 
 			.spec-item {
-				text-align: center;
 				padding: 2rem;
 				background: rgba(26, 71, 42, 0.5);
 				border-radius: 15px;
@@ -465,25 +464,136 @@ const hdImages = {
 				height: 100%;
 				display: flex;
 				flex-direction: column;
-				justify-content: space-between;
 			}
 
 			.spec-item:hover {
 				transform: translateY(-5px);
 			}
 
+			.spec-content {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+				flex: 1;
+			}
+
+			.spec-text {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				flex-wrap: wrap;
+			}
+
 			.spec-label {
 				color: var(--secondary);
 				font-weight: bold;
 				font-size: 1.2rem;
-				margin-bottom: 1rem;
 				text-transform: uppercase;
 				letter-spacing: 2px;
+				flex: 0 0 auto;
 			}
 
 			.spec-value {
 				font-size: 1.1rem;
 				line-height: 1.6;
+				margin: 0;
+				color: var(--text);
+				opacity: 0.8;
+			}
+
+			.morse-animation {
+				display: inline-flex;
+				align-items: center;
+				font-family: 'Space Mono', monospace;
+				font-size: clamp(1.2rem, 3vw, 1.8rem);
+				color: var(--secondary);
+				text-shadow: 0 0 15px var(--glow);
+				position: relative;
+				overflow: hidden;
+				white-space: nowrap;
+				margin-left: 1rem;
+				flex: 1;
+				min-height: 2rem;
+			}
+
+			.morse-char {
+				display: inline-block;
+				opacity: 0;
+				transform: translateX(-20px) scale(0.5);
+				animation: morseTypeIn 0.4s ease-out forwards;
+				margin: 0 3px;
+			}
+
+			.morse-char.dot {
+				color: var(--secondary);
+				text-shadow: 0 0 15px var(--secondary), 0 0 25px var(--secondary);
+				font-weight: bold;
+			}
+
+			.morse-char.dash {
+				color: #a8e650;
+				text-shadow: 0 0 20px #a8e650, 0 0 35px #a8e650;
+				font-weight: bold;
+				transform: translateX(-20px) scale(0.5);
+			}
+
+			.morse-char.space {
+				width: 8px;
+				height: 2px;
+				background: rgba(151, 206, 76, 0.4);
+				margin: 0 6px;
+				opacity: 0;
+				animation: morseSpaceIn 0.2s ease-out forwards;
+			}
+
+			.morse-char.word-gap {
+				width: 16px;
+				height: 2px;
+				background: rgba(151, 206, 76, 0.3);
+				margin: 0 10px;
+				opacity: 0;
+				animation: morseSpaceIn 0.2s ease-out forwards;
+			}
+
+			@keyframes morseTypeIn {
+				0% {
+					opacity: 0;
+					transform: translateX(-20px) scale(0.5);
+				}
+				60% {
+					opacity: 1;
+					transform: translateX(2px) scale(1.1);
+				}
+				100% {
+					opacity: 1;
+					transform: translateX(0) scale(1);
+				}
+			}
+
+			@keyframes morseSpaceIn {
+				0% {
+					opacity: 0;
+					transform: scaleX(0);
+				}
+				100% {
+					opacity: 1;
+					transform: scaleX(1);
+				}
+			}
+
+			.morse-cursor {
+				display: inline-block;
+				width: 3px;
+				height: 1.3em;
+				background: var(--secondary);
+				margin-left: 3px;
+				animation: cursorBlink 1s infinite;
+				box-shadow: 0 0 10px var(--secondary);
+			}
+
+			@keyframes cursorBlink {
+				0%, 50% { opacity: 1; }
+				51%, 100% { opacity: 0; }
 			}
 
 			.blog-section {
@@ -635,6 +745,37 @@ const hdImages = {
 					grid-template-columns: 1fr;
 					padding: 0 1rem;
 				}
+
+				.spec-content {
+					flex-direction: column;
+					gap: 1rem;
+				}
+
+				.spec-text {
+					flex-direction: column;
+					gap: 1rem;
+					text-align: center;
+				}
+
+				.morse-animation {
+					font-size: 1rem;
+					min-height: 50px;
+					justify-content: center;
+				}
+
+				.morse-char {
+					margin: 0 1px;
+				}
+
+				.morse-char.space {
+					width: 8px;
+					margin: 0 2px;
+				}
+
+				.morse-char.word-gap {
+					width: 12px;
+					margin: 0 4px;
+				}
 			}
 
 			@media (min-width: 2000px) {
@@ -713,12 +854,42 @@ const hdImages = {
 				<div class="container">
 					<h2>Training Paths</h2>
 					<div class="specs-grid">
-						{Object.entries(product.specs).map(([key, value]) => (
-							<div class="spec-item">
-								<div class="spec-label">{key}</div>
-								<div class="spec-value">{value}</div>
+						<div class="spec-item">
+							<div class="spec-content">
+								<div class="spec-text">
+									<div class="spec-label">Training Levels</div>
+									<div class="morse-animation" data-morse="- .-. .- .. -. .. -. --. / .-.. . ...- . .-.. ..."></div>
+								</div>
+								<div class="spec-value">Beginner to Advanced (5 WPM to 25+ WPM)</div>
 							</div>
-						))}
+						</div>
+						<div class="spec-item">
+							<div class="spec-content">
+								<div class="spec-text">
+									<div class="spec-label">Session Types</div>
+									<div class="morse-animation" data-morse="... . ... ... ... .. --- -. / - -.-- .--. ..."></div>
+								</div>
+								<div class="spec-value">Individual Lessons, Group Practice, Live Simulations</div>
+							</div>
+						</div>
+						<div class="spec-item">
+							<div class="spec-content">
+								<div class="spec-text">
+									<div class="spec-label">Community</div>
+									<div class="morse-animation" data-morse="-.-. --- -- -- ..- -. .. - -.--"></div>
+								</div>
+								<div class="spec-value">Global Network of 10,000+ Enthusiasts</div>
+							</div>
+						</div>
+						<div class="spec-item">
+							<div class="spec-content">
+								<div class="spec-text">
+									<div class="spec-label">Platform</div>
+									<div class="morse-animation" data-morse=".--. .-.. .- - ..- --- .-. --"></div>
+								</div>
+								<div class="spec-value">Web-based with Mobile Apps Available</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -750,6 +921,98 @@ const hdImages = {
 				</div>
 			</section>
 		</main>
-		<Footer />
+	<Footer />
+		
+		<script>
+			class MorseAnimator {
+				constructor(element, morseString) {
+					this.element = element;
+					this.morseString = morseString;
+					this.isAnimating = false;
+				}
+
+				createMorseElement(type, delay) {
+					const span = document.createElement('span');
+					span.className = `morse-char ${type}`;
+					span.style.animationDelay = `${delay}s`;
+					
+					if (type === 'dot') {
+						span.textContent = '·';
+					} else if (type === 'dash') {
+						span.textContent = '—';
+					} else if (type === 'space') {
+						span.textContent = '';
+					} else if (type === 'word-gap') {
+						span.textContent = '';
+					}
+					
+					return span;
+				}
+
+				animate() {
+					if (this.isAnimating) return;
+					this.isAnimating = true;
+					
+					// Clear existing content
+					this.element.innerHTML = '';
+					
+					// Create elements for each character
+					const elements = [];
+					let delay = 0;
+					const charDelay = 0.15; // Delay between characters
+					
+					for (let i = 0; i < this.morseString.length; i++) {
+						const char = this.morseString[i];
+						
+						if (char === '.') {
+							elements.push(this.createMorseElement('dot', delay));
+							delay += charDelay;
+						} else if (char === '-') {
+							elements.push(this.createMorseElement('dash', delay));
+							delay += charDelay;
+						} else if (char === ' ') {
+							elements.push(this.createMorseElement('space', delay));
+							delay += charDelay * 0.5;
+						} else if (char === '/') {
+							elements.push(this.createMorseElement('word-gap', delay));
+							delay += charDelay * 0.5;
+						}
+					}
+					
+					// Add cursor at end
+					const cursor = document.createElement('span');
+					cursor.className = 'morse-cursor';
+					cursor.style.animationDelay = `${delay}s`;
+					elements.push(cursor);
+					
+					// Add all elements to container
+					elements.forEach(el => this.element.appendChild(el));
+					
+					// Restart animation after completion
+					const totalDuration = delay + 2;
+					setTimeout(() => {
+						this.isAnimating = false;
+						// Auto-restart after a pause
+						setTimeout(() => this.animate(), 3000);
+					}, totalDuration * 1000);
+				}
+			}
+
+			// Initialize animations when page loads
+			document.addEventListener('DOMContentLoaded', () => {
+				const morseElements = document.querySelectorAll('.morse-animation');
+				
+				morseElements.forEach((element, index) => {
+					const morseString = element.getAttribute('data-morse');
+					if (morseString) {
+						// Stagger the start of each animation
+						setTimeout(() => {
+							const animator = new MorseAnimator(element, morseString);
+							animator.animate();
+						}, index * 500);
+					}
+				});
+			});
+		</script>
 	</body>
 </html>

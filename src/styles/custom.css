@@ -3,8 +3,8 @@
 
 /* Font Variables for Consistency */
 :root {
-	--font-primary: 'Fira Sans', sans-serif;
-	--font-mono: 'Fira Code', monospace;
+	--font-primary: 'Fira Code', sans-serif;
+	--font-mono: 'Space Mono', monospace;
 	--font-fallback: monospace;
 }
 
