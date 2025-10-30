@@ -3,8 +3,9 @@
 
 /* Font Variables for Consistency */
 :root {
-	--font-primary: 'Space Grotesk', sans-serif;
-	--font-mono: 'Space Mono', monospace;
+	--font-primary: 'Fira Sans', sans-serif;
+	--font-mono: 'Fira Code', monospace;
+	--font-fallback: monospace;
 }
 
 /* Override default fonts with custom fonts */
@@ -24,9 +25,40 @@ blockquote {
 	font-family: var(--font-mono) !important;
 }
 
-/* Ensure all text content is consistently white */
-h1, h2, h3, h4, h5, h6 {
+/* Ensure all text content is consistently white except H2 */
+h1, h3, h4, h5, h6 {
 	color: white !important;
+}
+
+/* H2 headings should use secondary color */
+h2 {
+	color: #97ce4c !important;
+}
+
+/* Blog post titles (h3.blog-title) should use H4 size */
+h3.blog-title {
+	font-size: 1.563em !important;
+}
+
+/* Ensure proper heading font size hierarchy */
+h1 {
+	font-size: 3.052em !important;
+}
+
+h2 {
+	font-size: 2.441em !important;
+}
+
+h3 {
+	font-size: 1.953em !important;
+}
+
+h4 {
+	font-size: 1.563em !important;
+}
+
+h5 {
+	font-size: 1.375em !important;
 }
 
 p, span, div, li, td, th, label, input, textarea, select {
@@ -42,9 +74,8 @@ body, main, article, section {
 	color: white !important;
 }
 
-/* Ensure blog post content text is white */
+/* Ensure blog post content text is white except H2 */
 .prose :global(h1),
-.prose :global(h2),
 .prose :global(h3),
 .prose :global(h4),
 .prose :global(h5),
@@ -56,6 +87,37 @@ body, main, article, section {
 	color: white !important;
 }
 
+/* H2 headings in prose should use secondary color */
+.prose :global(h2) {
+	color: #97ce4c !important;
+}
+
+/* Ensure prose content maintains proper heading font sizes */
+.prose :global(h1) {
+	font-size: 3.052em !important;
+}
+
+.prose :global(h2) {
+	font-size: 2.441em !important;
+}
+
+.prose :global(h3) {
+	font-size: 1.953em !important;
+}
+
+/* Blog post titles (h3.blog-title) in prose should use H4 size */
+.prose :global(h3.blog-title) {
+	font-size: 1.563em !important;
+}
+
+.prose :global(h4) {
+	font-size: 1.563em !important;
+}
+
+.prose :global(h5) {
+	font-size: 1.375em !important;
+}
+
 /* Keep secondary colored headings for emphasis but ensure they're visible */
 .title h1, .hero h1 {
 	color: #97ce4c !important;
@@ -64,4 +126,14 @@ body, main, article, section {
 /* Ensure CTA button has proper text contrast */
 .cta-button {
 	color: #1a472a !important; /* Use primary-dark for better contrast */
+}
+
+/* Prose paragraph line-height */
+.prose p {
+	line-height: 1.5 !important;
+}
+
+/* Prose list line-height */
+.prose ul {
+	line-height: 1.5 !important;
 }

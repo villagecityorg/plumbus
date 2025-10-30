@@ -1,5 +1,5 @@
 ---
-title: 'Why VCC Morse Radio is a Better Entry into the World of Radio?'
+title: 'Why VCC Morse Radio is a Better Entry into Radio?'
 description: 'Explore why Morse radio communication offers the perfect foundation for understanding radio fundamentals and building essential skills for any radio enthusiast.'
 pubDate: 'Oct 6 2025'
 heroImage: '/cover-morse-radio.jpg'

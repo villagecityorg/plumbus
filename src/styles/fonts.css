@@ -1,7 +1,25 @@
 /* Custom Fonts for VCC Morse Radio Network */
-/* Following Astro CSS organization conventions */
+/* Fira Fonts - Modern Technical Aesthetic */
 
-/* Space Grotesk - Primary Font */
+/* Fira Sans - Primary Font */
+@font-face {
+	font-family: 'Fira Sans';
+	src: url('/fonts/FiraSans-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Fira Code - Monospace Font */
+@font-face {
+	font-family: 'Fira Code';
+	src: url('/fonts/FiraCode-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Legacy fonts (kept for compatibility) */
 @font-face {
 	font-family: 'Space Grotesk';
 	src: url('/fonts/space-grotesk.woff2') format('woff2');
@@ -18,7 +36,6 @@
 	font-display: swap;
 }
 
-/* Space Mono - Secondary/Monospace Font */
 @font-face {
 	font-family: 'Space Mono';
 	src: url('/fonts/space-mono-regular.woff2') format('woff2');
@@ -29,6 +46,6 @@
 
 /* Font Variables for Consistency */
 :root {
-	--font-primary: 'Space Grotesk', sans-serif;
-	--font-mono: 'Space Mono', monospace;
+	--font-primary: 'Fira Sans', sans-serif;
+	--font-mono: 'Fira Code', monospace;
 }
