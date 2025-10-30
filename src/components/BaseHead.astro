@@ -5,6 +5,7 @@ import '../styles/fonts.css';
 import '../styles/global.css';
 import '../styles/custom.css';
 import { SITE_TITLE } from '../consts';
+import GoogleAnalytics from './GoogleAnalytics.astro';
 
 interface Props {
 	title: string;
@@ -56,3 +57,6 @@ const { title, description, image = '/cover-morse-radio.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Google Analytics -->
+<GoogleAnalytics />

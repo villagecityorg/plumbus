@@ -1,40 +1,36 @@
-# 🌌 VCC Morse Radio Landing Site on Plumbus Theme
+# 📻 VCC Morse Radio Network
 
-![](public/pic_prev_1.jpg)
-![](public/pic_prev_2.jpg)
-![](public/pic_prev_3.jpg)
-![](public/pic_prev_4.jpg)
-A stunning, interdimensional landing page for the mysterious yet ubiquitous Plumbus. Built with Astro and enhanced with cosmic animations.
+A modern web application for Morse radio communication training over mesh networks. Built with Astro for optimal performance and user experience.
 
 ## ✨ Features
 
-- 🎨 Stunning visual design with cosmic animations
-- 📱 Fully responsive across all dimensions
-- 🚀 Built with Astro for optimal performance
-- 🌈 Interactive UI elements with portal effects
-- 🔄 Dynamic content management via JSON
-- 🎭 Custom animations and transitions
-- 🌟 SEO optimized for interdimensional search
-- 🌐 Blog section with MDX support
-- 🎯 Quantum-crystalline verification system
-- 🛡️ Galactic Federation compliance built-in
+- 🎨 Modern responsive design with atmospheric effects
+- 📱 Mobile-friendly interface across all devices
+- 🚀 Built with Astro for fast loading and SEO
+- 🌐 Blog system with Markdown support
+- 📡 Morse code training and practice
+- 🔄 Infinite scroll for blog posts
+- 🎯 Interactive UI elements with smooth animations
+- 🛡️ Secure authentication with VCC Kit integration
+- 📊 Real-time Morse code decoding
+- 🌟 Progressive Web App capabilities
 
 ## 🛠 Tech Stack
 
-- [Astro](https://astro.build) - The web framework for content-driven websites
-- Modern CSS with custom properties
-- Responsive images and lazy loading
-- JSON-based content management
-- Advanced CSS animations
-- MDX for enhanced content creation
-- RSS feed support
-- Sitemap generation
+- [Astro](https://astro.build) - Modern web framework for content-driven sites
+- Tailwind CSS - Utility-first CSS framework
+- Vanilla JavaScript - Lightweight client-side interactions
+- Markdown/MDX - Content management for blog posts
+- Responsive Images - Optimized image loading
+- CSS Custom Properties - Dynamic theming
+- RSS Feed - Blog syndication support
 
 ## 🚀 Getting Started
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/temaprint/plumbus.git
+git clone https://github.com/villagecityorg/morseradio.git
+cd morseradio
 ```
 
 2. Install dependencies:
@@ -42,127 +38,155 @@ git clone https://github.com/temaprint/plumbus.git
 npm install
 ```
 
-3. Start the development server:
+3. Configure Google Analytics (optional):
+   Edit `src/components/GoogleAnalytics.astro` and replace the tracking ID:
+   ```astro
+   const GA_TRACKING_ID = 'G-XXXXXXXXXX'; // Replace with your actual ID
+   ```
+
+4. Start development server:
 ```bash
 npm run dev
 ```
 
-4. Open your browser and visit `http://localhost:4321`
+5. Open your browser and visit `http://localhost:4321`
 
 ## 📁 Project Structure
 
 ```
 /
 ├── public/
-│   ├── fonts/
-│   │   ├── atkinson-bold.woff
-│   │   └── atkinson-regular.woff
-│   └── images/
+│   ├── fonts/           # Custom font files
+│   └── images/          # Static images and assets
 ├── src/
 │   ├── components/
-│   │   ├── BaseHead.astro
-│   │   ├── Footer.astro
-│   │   ├── Header.astro
-│   │   └── HeaderLink.astro
+│   │   ├── BaseHead.astro        # Head component with meta tags
+│   │   ├── Footer.astro          # Site footer
+│   │   ├── GoogleAnalytics.astro # Analytics integration
+│   │   ├── Header.astro          # Navigation header
+│   │   ├── HeaderLink.astro       # Navigation links
+│   │   ├── MorsePopup.astro      # CTA button with popup
+│   │   └── FormattedDate.astro  # Date formatting component
 │   ├── content/
-│   │   ├── blog/
-│   │   │   └── *.{md,mdx}
-│   │   └── data/
-│   │       └── main.json
+│   │   ├── blog/               # Blog posts in Markdown
+│   │   └── data/               # Site data and configuration
 │   ├── layouts/
-│   │   └── BlogPost.astro
+│   │   └── BlogPost.astro       # Blog post layout template
 │   ├── pages/
-│   │   ├── blog/
-│   │   │   └── [...slug].astro
-│   │   ├── shop/
-│   │   │   └── plumbus.astro
-│   │   ├── about.astro
-│   │   └── index.astro
+│   │   ├── blog/               # Blog pages
+│   │   ├── about.astro          # About page
+│   │   └── index.astro         # Landing page
 │   └── styles/
-│       └── global.css
+│       ├── custom.css           # Custom site styles
+│       ├── fonts.css            # Font loading
+│       └── global.css           # Global base styles
 └── package.json
 ```
 
-## 🎨 Content Management
+## 📝 Content Management
 
-The site content is managed through `src/content/data/main.json`. You can easily modify:
-
-- Product details and specifications
-- Features and benefits
-- Customer testimonials
-- SEO metadata and social links
-- Legal disclaimers
-- Contact information
+### Site Configuration
+The main site content is managed through `src/content/data/main.json`. You can modify:
+- Product information and features
+- Training specifications
+- SEO metadata
+- Social media links
 
 ### Blog Posts
+Blog posts are stored in `src/content/blog/` as Markdown files with frontmatter:
+- `title`: Post title
+- `pubDate`: Publication date
+- `description`: Post summary
+- `heroImage`: Featured image
+- `featured`: Boolean for featured posts
 
-Blog posts are stored in `src/content/blog/` as Markdown or MDX files. Each post supports:
-
-- Custom frontmatter
-- Hero images
-- Rich text formatting
-- Code syntax highlighting
-- Embedded components (MDX)
+### Featured Posts
+The blog system supports featured posts:
+- Latest post is automatically featured
+- Posts with `featured: true` in frontmatter are also featured
+- Featured posts display prominently on blog index
 
 ## 🚀 Deployment
 
-Build the project:
-
+### Build for Production
 ```bash
 npm run build
 ```
 
-Preview the build:
-
+### Preview Production Build
 ```bash
 npm run preview
 ```
 
-## 🔐 Security Features
+### Development
+```bash
+npm run dev
+```
 
-- Galactic Federation ID verification
-- Quantum-crystalline authentication
-- Interdimensional access controls
-- Temporal paradox prevention
-- Fleeb juice encryption standards
+## 📊 Features in Detail
+
+### Morse Radio Training
+- Interactive Morse code practice
+- Real-time visual feedback
+- Multiple input methods (keyboard, mouse, VCC Kit)
+- WPM (Words Per Minute) tracking
+- Audio-visual feedback
+
+### Blog System
+- Markdown-based content management
+- Infinite scroll pagination
+- Featured post system
+- RSS feed generation
+- SEO-optimized URLs
+- Responsive card layout
+
+### Authentication
+- VCC Kit device authentication
+- Challenge code verification
+- Secure login system
+- Device pairing support
+
+## 🔧 Configuration
+
+### Analytics Configuration
+Analytics is configured through `src/content/data/main.json`:
+```json
+"analytics": {
+  "enabled": true,
+  "provider": "google",
+  "trackingId": "G-XXXXXXXXXX"
+}
+```
+
+### Site Customization
+- Colors and themes via CSS custom properties
+- Font selection and typography
+- Layout breakpoints for responsive design
+- Animation timing and effects
+- Content management through JSON configuration
 
 ## 📝 License
 
-MIT License - feel free to use this across any dimension
-
-## 🌟 Credits
-
-- Design inspired by interdimensional aesthetics
-- Images sourced from various dimensions
-- Built with love by the Council of Ricks
-- Fleeb juice provided by certified Fleeb farmers
-- Schlami testing by professional Schlamis
+MIT License - feel free to use for personal and commercial projects
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ### Development Guidelines
+- Follow existing code style and conventions
+- Test responsive behavior on multiple devices
+- Ensure accessibility standards are met
+- Update documentation for new features
+- Test Morse radio functionality thoroughly
 
-- Follow the Interdimensional Style Guide
-- Test across multiple dimensions
-- Verify Fleeb compatibility
-- Maintain Schlami standards
-- Document any temporal anomalies
+## 🙏 Acknowledgments
 
-## 💫 Special Thanks
-
-Special thanks to:
-- The Plumbus manufacturers
-- All the Fleeb juice providers
-- The Council of Ricks
-- Interdimensional quality testers
-- Beta dimension users
-- Quantum uncertainty reducers
-
-
-Remember: Every Plumbus is unique, just like the dimension it comes from!
+- Astro team for the excellent framework
+- Morse code community for standards and patterns
+- Open source contributors and maintainers
+- VCC Kit developers for hardware integration
