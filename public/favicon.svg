@@ -1,52 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
 <!-- Define Colors -->
 <defs>
-<linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
-<stop offset="0%" stop-color="#2c3e50"/> <!-- Dark Navy Blue (Professional/Reliable) -->
-<stop offset="100%" stop-color="#34495e"/>
+<linearGradient id="BackgroundGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#2f4f4f"/> <!-- Darker Slate Green (Complements primary green) -->
+<stop offset="100%" stop-color="#3a5a5a"/>
 </linearGradient>
-<linearGradient id="Gradient2" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#3498db"/> <!-- Electric Blue (Signal/Modern) -->
-<stop offset="100%" stop-color="#2980b9"/>
+<linearGradient id="PrimaryGradient" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#97ce4c"/> <!-- Your Primary Green -->
+<stop offset="100%" stop-color="#82bb41"/> <!-- Slightly darker shade for depth -->
+</linearGradient>
+<linearGradient id="AccentGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#dcdcdc"/> <!-- Light Grey for Dits -->
+<stop offset="100%" stop-color="#bdbdbd"/>
 </linearGradient>
 </defs>
 
 <!-- Background Circle (Represents Global Network/Community) -->
-
-<circle cx="100" cy="100" r="98" fill="url(#Gradient1)" stroke="#202c3a" stroke-width="4"/>
+<circle cx="100" cy="100" r="98" fill="url(#BackgroundGradient)" stroke="#253f3f" stroke-width="4"/>
 
 <!-- The Signal Path / Wave Base -->
-
-<path d="M 40 100 A 60 60 0 0 1 160 100 A 60 60 0 0 1 40 100 Z" fill="none" stroke="#2c3e50" stroke-width="6"/>
+<path d="M 40 100 A 60 60 0 0 1 160 100 A 60 60 0 0 1 40 100 Z" fill="none" stroke="#2f4f4f" stroke-width="6"/>
 
 <!-- Stylized Morse Signal (The Wave and Dits/Dahs) -->
-
 <!-- The Dahs (Long lines/Signals) -->
-
-<!-- 1st Dah (Part of 'M' or start of a message) -->
-
-<rect x="50" y="85" width="40" height="30" rx="5" fill="url(#Gradient2)"/>
-
-<!-- 2nd Dah (Part of 'M') -->
-
-<rect x="110" y="85" width="40" height="30" rx="5" fill="url(#Gradient2)"/>
+<rect x="50" y="85" width="40" height="30" rx="5" fill="url(#PrimaryGradient)"/>
+<rect x="110" y="85" width="40" height="30" rx="5" fill="url(#PrimaryGradient)"/>
 
 <!-- The Dits (Dots/Short lines) -->
-
-<!-- 1st Dit (Part of 'R') -->
-
-<circle cx="80" cy="50" r="10" fill="#ecf0f1"/> <!-- Light Silver/White for contrast -->
-
-<!-- 2nd Dit (Part of 'R') -->
-
-<circle cx="100" cy="50" r="10" fill="#ecf0f1"/>
-
-<!-- 3rd Dit (Part of 'R') -->
-
-<circle cx="120" cy="50" r="10" fill="#ecf0f1"/>
+<circle cx="80" cy="50" r="10" fill="url(#AccentGradient)"/>
+<circle cx="100" cy="50" r="10" fill="url(#AccentGradient)"/>
+<circle cx="120" cy="50" r="10" fill="url(#AccentGradient)"/>
 
 <!-- Central Arc / Broadcast Symbol -->
-
-<path d="M 50 140 A 50 50 0 0 1 150 140" fill="none" stroke="url(#Gradient2)" stroke-width="8" stroke-linecap="round"/>
+<path d="M 50 140 A 50 50 0 0 1 150 140" fill="none" stroke="url(#PrimaryGradient)" stroke-width="8" stroke-linecap="round"/>
 
 </svg>
