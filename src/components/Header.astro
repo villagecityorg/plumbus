@@ -6,6 +6,9 @@ import { SITE_TITLE } from '../consts';
 <header>
 	<nav>
 		<div class="internal-links">
+			<a href="/" class="logo-link" aria-label="Morse Radio Home">
+				<img src="/morse-radio-logo.svg" alt="Morse Radio Logo" class="logo" />
+			</a>
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
@@ -87,6 +90,33 @@ import { SITE_TITLE } from '../consts';
 	.internal-links {
 		display: flex;
 		gap: 1em;
+		align-items: center;
+	}
+
+	.logo-link {
+		padding: 0;
+		border: none;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		transition: all 0.3s ease;
+	}
+
+	.logo-link:hover {
+		border: none;
+		transform: translateY(-2px);
+		filter: drop-shadow(0 0 10px var(--secondary));
+	}
+
+	.logo {
+		width: 40px;
+		height: 40px;
+		display: block;
+		transition: all 0.3s ease;
+	}
+
+	.logo:hover {
+		transform: scale(1.05);
 	}
 
 	.social-links,
@@ -134,6 +164,15 @@ import { SITE_TITLE } from '../consts';
 		nav a {
 			font-size: 1em;
 			padding: 0.3em;
+		}
+
+		.logo {
+			width: 32px;
+			height: 32px;
+		}
+
+		.logo-link:hover {
+			transform: translateY(-1px);
 		}
 	}
 </style>
