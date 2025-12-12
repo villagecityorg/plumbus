@@ -2,9 +2,9 @@
 // Astro component for popup functionality
 ---
 
-<button 
-  class="cta-button" 
-  onclick="window.open('/app', 'vcc-morse-popup', 'width=720,height=1280,resizable=yes,scrollbars=yes,status=yes,toolbar=no,menubar=no,location=no')"
+<button
+  class="cta-button"
+  onclick="window.open('/app', 'vcc-morse-popup', 'width=1280,height=720,resizable=yes,scrollbars=yes,status=yes,toolbar=no,menubar=no,location=no')"
 >
   Start VCC Morse Radio!
 </button>
@@ -25,7 +25,7 @@
     margin-top: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    box-shadow: 
+    box-shadow:
       0 0 10px var(--glow),
       0 0 20px var(--glow);
     backdrop-filter: blur(5px);
@@ -38,7 +38,7 @@
   .cta-button:hover {
     transform: scale(1.05) translateY(-5px);
     background: #a8e650;
-    box-shadow: 
+    box-shadow:
       0 0 20px var(--glow),
       0 0 40px var(--glow);
   }
